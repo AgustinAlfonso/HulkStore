@@ -1,0 +1,25 @@
+
+
+${Ansi.GREEN} TTTTTTTTTTTTTTTTTTTTTTT                                                                                                iiii                      AAA               PPPPPPPPPPPPPPPPP   IIIIIIIIII
+${Ansi.GREEN} T:::::::::::::::::::::T                                                                                               i::::i                    A:::A              P::::::::::::::::P  I::::::::I
+${Ansi.GREEN} T:::::::::::::::::::::T                                                                                                iiii                    A:::::A             P::::::PPPPPP:::::P I::::::::I
+${Ansi.GREEN} T:::::TT:::::::TT:::::T                                                                                                                       A:::::::A            PP:::::P     P:::::PII::::::II
+${Ansi.GREEN} TTTTTT  T:::::T  TTTTTTaaaaaaaaaaaaa  nnnn  nnnnnnnn       ggggggggg   ggggg aaaaaaaaaaaaa      mmmmmmm    mmmmmmm   iiiiiii                 A:::::::::A             P::::P     P:::::P  I::::I
+${Ansi.GREEN}         T:::::T        a::::::::::::a n:::nn::::::::nn    g:::::::::ggg::::g a::::::::::::a   mm:::::::m  m:::::::mm i:::::i                A:::::A:::::A            P::::P     P:::::P  I::::I
+${Ansi.GREEN}         T:::::T        aaaaaaaaa:::::an::::::::::::::nn  g:::::::::::::::::g aaaaaaaaa:::::a m::::::::::mm::::::::::m i::::i               A:::::A A:::::A           P::::PPPPPP:::::P   I::::I
+${Ansi.GREEN}         T:::::T                 a::::ann:::::::::::::::ng::::::ggggg::::::gg          a::::a m::::::::::::::::::::::m i::::i              A:::::A   A:::::A          P:::::::::::::PP    I::::I
+${Ansi.GREEN}         T:::::T          aaaaaaa:::::a  n:::::nnnn:::::ng:::::g     g:::::g    aaaaaaa:::::a m:::::mmm::::::mmm:::::m i::::i             A:::::A     A:::::A         P::::PPPPPPPPP      I::::I
+${Ansi.GREEN}         T:::::T        aa::::::::::::a  n::::n    n::::ng:::::g     g:::::g  aa::::::::::::a m::::m   m::::m   m::::m i::::i            A:::::AAAAAAAAA:::::A        P::::P              I::::I
+${Ansi.GREEN}         T:::::T       a::::aaaa::::::a  n::::n    n::::ng:::::g     g:::::g a::::aaaa::::::a m::::m   m::::m   m::::m i::::i           A:::::::::::::::::::::A       P::::P              I::::I
+${Ansi.GREEN}         T:::::T      a::::a    a:::::a  n::::n    n::::ng::::::g    g:::::ga::::a    a:::::a m::::m   m::::m   m::::m i::::i          A:::::AAAAAAAAAAAAA:::::A      P::::P              I::::I
+${Ansi.GREEN}       TT:::::::TT    a::::a    a:::::a  n::::n    n::::ng:::::::ggggg:::::ga::::a    a:::::a m::::m   m::::m   m::::mi::::::i        A:::::A             A:::::A   PP::::::PP          II::::::II
+${Ansi.GREEN}       T:::::::::T    a:::::aaaa::::::a  n::::n    n::::n g::::::::::::::::ga:::::aaaa::::::a m::::m   m::::m   m::::mi::::::i       A:::::A               A:::::A  P::::::::P          I::::::::I
+${Ansi.GREEN}       T:::::::::T     a::::::::::aa:::a n::::n    n::::n  gg::::::::::::::g a::::::::::aa:::am::::m   m::::m   m::::mi::::::i      A:::::A                 A:::::A P::::::::P          I::::::::I
+${Ansi.GREEN}       TTTTTTTTTTT      aaaaaaaaaa  aaaa nnnnnn    nnnnnn    gggggggg::::::g  aaaaaaaaaa  aaaammmmmm   mmmmmm   mmmmmmiiiiiiii     AAAAAAA                   AAAAAAAPPPPPPPPPP          IIIIIIIIII
+${Ansi.GREEN}                                                                     g:::::g
+${Ansi.GREEN}                                                         gggggg      g:::::g
+${Ansi.GREEN}                                                         g:::::gg   gg:::::g
+${Ansi.GREEN}                                                          g::::::ggg:::::::g
+${Ansi.GREEN}                                                           gg:::::::::::::g
+${Ansi.GREEN}                                                             ggg::::::ggg
+${Ansi.GREEN}                                                                gggggg
