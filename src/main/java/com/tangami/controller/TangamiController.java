@@ -1,9 +1,8 @@
 package com.tangami.controller;
 
-import com.tangami.service.SolicitudImpl;
+import com.tangami.service.ProductServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 
 
 @RestController
@@ -11,10 +10,15 @@ import org.springframework.web.bind.annotation.*;
 public class TangamiController {
 
     @Autowired
-    private SolicitudImpl solicitud;
+    private ProductServiceImpl itemService;
 
-    @GetMapping(value = "/getPerson/{id}")
-    public String getPerson(@PathVariable String id){
-        return solicitud.getPerson(id);
+    @GetMapping(value = "/getProductAmount/{id}")
+    public String getProduct(@PathVariable String id){
+        return "";
+    }
+
+    @PostMapping(value = "/addProduct/{id}")
+    public String createProduct(@PathVariable String id) {
+        return "BUENA VIEJO " + id;
     }
 }
