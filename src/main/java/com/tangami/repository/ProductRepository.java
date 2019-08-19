@@ -1,4 +1,4 @@
-package com.tangami.h2;
+package com.tangami.repository;
 
 import com.tangami.model.Product;
 import org.springframework.data.repository.CrudRepository;

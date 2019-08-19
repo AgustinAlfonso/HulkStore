@@ -15,8 +15,8 @@ public class ProductResponse extends ResponseBase{
     private Integer amount;
 
     @Builder
-    public ProductResponse(String productName, String productType, Integer amount, HttpStatus errorcod, String errordes) {
-        super(errorcod,errordes);
+    public ProductResponse(String productName, String productType, Integer amount, HttpStatus statusCod, String statusDescription) {
+        super(statusCod,statusDescription);
         this.productName = productName;
         this.productType = productType;
         this.amount = amount;

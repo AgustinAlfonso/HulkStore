@@ -12,8 +12,8 @@ public class ProductListResponse extends ResponseBase {
     private List<ProductResponse> productList;
 
     @Builder
-    public ProductListResponse(HttpStatus errorcod, String errordes, List<ProductResponse> productList) {
-        super(errorcod, errordes);
+    public ProductListResponse(HttpStatus statusCod, String statusDescription, List<ProductResponse> productList) {
+        super(statusCod, statusDescription);
         this.productList = productList;
     }
 

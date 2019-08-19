@@ -1,8 +1,8 @@
-package com.tangami.Helper;
+package com.tangami.helper;
 
 import com.tangami.dto.ProductRequest;
 import com.tangami.dto.ProductResponse;
-import com.tangami.h2.ProductRepository;
+import com.tangami.repository.ProductRepository;
 import com.tangami.model.Product;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,12 +30,12 @@ public class Helper {
                 productRepository.save(p);
             }else
                 productRepository.save(responseMapper(product));
-            response.setErrorcod(HttpStatus.OK);
-            response.setErrordes("Producto Modificado con Exito");
+            response.setStatusCod(HttpStatus.OK);
+            response.setStatusDescription("Producto Modificado con Exito");
         }catch (Throwable e){
             log.log(Level.SEVERE, e.getMessage(), e);
-            response.setErrorcod(HttpStatus.NOT_MODIFIED);
-            response.setErrordes("No se pudieron guardar los cambios");
+            response.setStatusCod(HttpStatus.NOT_MODIFIED);
+            response.setStatusDescription("No se pudieron guardar los cambios");
         }
         return response;
     }

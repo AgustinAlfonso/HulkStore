@@ -8,15 +8,16 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import java.util.Date;
 
-public class InsuficientAmountException extends ResponseEntityExceptionHandler {
+public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
 
 
     @ExceptionHandler(Exception.class)
-    public final ResponseEntity<ExceptionResponse> InsuficientAmountException (InsuficientAmountException ex, WebRequest request){
+    public final ResponseEntity<ExceptionResponse> InsuficientAmountException(InsufficientAmountException ex, WebRequest request) {
         ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(), ex.getMessage(),
                 request.getDescription(false));
         return new ResponseEntity<ExceptionResponse>(exceptionResponse, HttpStatus.NOT_FOUND);
     }
-    }
 
 }
+
+
