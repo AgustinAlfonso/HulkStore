@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>ABM Productos HulkStore</title>
+</head>
+<script src="jquery-1.10.2.js"></script>
+<body>
+<div>
+	<form method="post" id="alta" action="http://10.2.179.3:8081/seguro/robo/saveSolicitud" enctype="text/plain" autocomplete="off">
+		<br/>
+		<h3> Seleccione o Tipee el producto deseado </h3>
+		<input list="productos" name="producto">
+		<datalist id="productos">
+			<option value="Internet Explorer">
+			<option value="Firefox">
+			<option value="Chrome">
+			<option value="Opera">
+			<option value="Safari">
+		</datalist>
+		<input type="submit"  value="Enviar !" id="submit" >
+	</form>
+</div>
+<script>
+
+	$("#alta").submit(function(event) {
+		/*alert("ACA ESTOY");*/
+		/* stop form from submitting normally */
+		event.preventDefault();
+		var post_url = $(this).attr("action"); //get form action url
+		var request_method = $(this).attr("method"); //get form GET/POST method
+		formData.forEach(function(value, key){
+			object[key] = value;
+			if (value instanceof Date){
+				object[key] = value.toISOString();
+				if(value = fventa){
+					object[femision] = value.toISOString();
+				}
+			}
+
+		});
+		var json = JSON.stringify(object);
+		alert("El formulario ha sido enviado correctamente");
+		document.getElementById("form1").reset();
+		console.log(json);
+
+		$.ajax({
+			url : post_url,
+			type: request_method,
+			data : json,
+			async: true,
+			crossDomain: true,
+			contentType: 'application/json;charset=UTF-8'
+
+		}).done(function(response){ //
+			$("#result").html(response);
+			console.log(response);
+
+		});
+	});
+</script>
+<h2><a href="/HulkStore.html">Volver</a></h2>
+</body>
+</html>
