@@ -5,9 +5,12 @@
 	<title>ABM Productos HulkStore</title>
 </head>
 <script src="jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script src="jquery-json-to-datalist.js"></script>
+
 <body>
 <div>
-	<form method="post" id="alta" action="http://10.2.179.3:8081/seguro/robo/saveSolicitud" enctype="text/plain" autocomplete="off">
+	<form method="post" id="alta" action="localhost:9093/getAllProducts" enctype="text/plain" autocomplete="off">
 		<br/>
 		<h3> Seleccione o Tipee el producto deseado </h3>
 		<input list="productos" name="producto">
@@ -22,6 +25,13 @@
 	</form>
 </div>
 <script>
+
+
+	$('.js-combobox').jsonToDatalist({
+		jsonPath: 'fruits.json'
+	});
+
+
 
 	$("#alta").submit(function(event) {
 		/*alert("ACA ESTOY");*/

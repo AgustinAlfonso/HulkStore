@@ -3,7 +3,6 @@ package com.tangami.controller;
 import com.tangami.dto.ProductListResponse;
 import com.tangami.dto.ProductRequest;
 import com.tangami.dto.ProductResponse;
-import com.tangami.service.ProductService;
 import com.tangami.service.ProductServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -29,8 +28,8 @@ public class TangamiControllerTest {
                                                             .productName("Comic Hijitus")
                                                             .productType("Comic")
                                                             .amount(12)
-                                                            .errorcod(HttpStatus.OK)
-                                                            .errordes("Todo ha salido bien")
+                                                            .statusCod(HttpStatus.OK)
+                                                            .statusDescription("Todo ha salido bien")
                                                             .build();
 
     public static final ProductRequest PRODUCT_REQUEST = ProductRequest.builder()
@@ -45,8 +44,8 @@ public class TangamiControllerTest {
 
     public static final ProductListResponse PRODUCT_LIST_RESPONSE = ProductListResponse.builder()
                                                                     .productList(PRODUCT_RESPONSE_LIST)
-                                                                    .errorcod(HttpStatus.OK)
-                                                                    .errordes("Todo ha salido bien")
+                                                                    .statusCod(HttpStatus.OK)
+                                                                    .statusDescription("Todo ha salido bien")
                                                                     .build();
 
     @Mock
@@ -95,8 +94,8 @@ public class TangamiControllerTest {
         assertEquals(PRODUCT_RESPONSE.getProductName(),productResponse.getProductName());
         assertEquals(PRODUCT_RESPONSE.getProductType(),productResponse.getProductType());
         assertEquals(PRODUCT_RESPONSE.getAmount(),productResponse.getAmount());
-        assertEquals(PRODUCT_RESPONSE.getErrordes(),productResponse.getErrordes());
-        assertEquals(PRODUCT_RESPONSE.getErrorcod(),productResponse.getErrorcod());
+        assertEquals(PRODUCT_RESPONSE.getStatusDescription(),productResponse.getStatusDescription());
+        assertEquals(PRODUCT_RESPONSE.getStatusCod(),productResponse.getStatusCod());
         verify(productService).setProductAmount(PRODUCT_REQUEST);
     }
 
@@ -110,8 +109,8 @@ public class TangamiControllerTest {
 //after
 
         assertEquals(PRODUCT_LIST_RESPONSE.getProductList(),productResponse.getProductList());
-        assertEquals(PRODUCT_LIST_RESPONSE.getErrorcod(),productResponse.getErrorcod());
-        assertEquals(PRODUCT_LIST_RESPONSE.getErrordes(),productResponse.getErrordes());
+        assertEquals(PRODUCT_LIST_RESPONSE.getStatusCod(),productResponse.getStatusCod());
+        assertEquals(PRODUCT_LIST_RESPONSE.getStatusDescription(),productResponse.getStatusDescription());
         verify(productService).getAllProducts();
     }
 
@@ -125,8 +124,8 @@ public class TangamiControllerTest {
 //after
 
         assertEquals(PRODUCT_LIST_RESPONSE.getProductList(),productResponse.getProductList());
-        assertEquals(PRODUCT_LIST_RESPONSE.getErrorcod(),productResponse.getErrorcod());
-        assertEquals(PRODUCT_LIST_RESPONSE.getErrordes(),productResponse.getErrordes());
+        assertEquals(PRODUCT_LIST_RESPONSE.getStatusCod(),productResponse.getStatusCod());
+        assertEquals(PRODUCT_LIST_RESPONSE.getStatusDescription(),productResponse.getStatusDescription());
         verify(productService).getSellableProducts();
     }
 

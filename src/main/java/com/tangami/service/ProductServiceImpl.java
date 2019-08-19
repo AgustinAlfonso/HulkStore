@@ -1,18 +1,19 @@
 package com.tangami.service;
 
 
-import com.tangami.Helper.Helper;
+import com.tangami.exception.InsufficientAmountException;
+import com.tangami.helper.Helper;
+import com.tangami.dto.ProductListResponse;
 import com.tangami.dto.ProductRequest;
 import com.tangami.dto.ProductResponse;
-import com.tangami.dto.ProductListResponse;
-import com.tangami.h2.ProductRepository;
+import com.tangami.repository.ProductRepository;
 import com.tangami.model.Product;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;
+import java.util.Optional;
 import java.util.logging.Level;
 import java.util.stream.Collectors;
 
@@ -52,7 +53,11 @@ public class ProductServiceImpl implements ProductService {
         return helper.saveModifications(product);
     }
 
-    public ProductResponse sellProduct(ProductRequest product) {
+    public ProductResponse sellProduct(ProductRequest product) throws InsufficientAmountException {
+        Product productOptional = productRepository.findProductByProductTypeAndProductName(product.getProductType(),product.getProductName());
+        if (productOptional != null && productOptional.getAmount() > product.getAmount()){
+            throw new InsufficientAmountException("La cantidad ingresada es mayor a la disponible");
+        }
         product.setAmount(-product.getAmount());
         log.log(Level.INFO, "Guardando modificaciones de venta de producto");
         return helper.saveModifications(product);

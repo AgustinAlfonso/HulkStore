@@ -1,0 +1,38 @@
+Aqui los request para poder llamar a los distintos endpoints desde postman
+Para todos los servicios post el request es igual, con lo cual se podria evaluar 
+reducir los 3 endpoints POST a uno solo con algun parametro extra que sirva para
+identificar cual servicio es
+
+Headers:
+Content-Type application/json
+
+Body:
+
+http://localhost:9093/nami/tango/addProduct 
+
+{
+	"productName":"Comic Iron Man",
+	"productType":"Comic",
+	"amount":"6"
+}
+
+http://localhost:9093/nami/tango/sellProduct 
+
+{
+	"productName":"Disfraz de Batman",
+	"productType":"Comic",
+	"amount":"1"
+}
+
+http://localhost:9093/nami/tango/setProductAmount
+{
+	"productName":"Cachiporra Chapulin Colorado",
+	"productType":"Juguete",
+	"amount":"3"
+}
+
+Para los Get no hay ningun secreto, con pegar las URL en el navegador ya recuperan informacion
+
+http://localhost:9093/nami/tango/getAllProducts
+
+http://localhost:9093/nami/tango/getSellableProducts

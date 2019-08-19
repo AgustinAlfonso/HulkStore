@@ -8,15 +8,15 @@ public class ResponseBase {
     /**
      * codigo de error
      */
-    protected HttpStatus errorcod;
+    protected HttpStatus statusCod;
 
     /**
      * Descripcion de error
      */
-    protected String errordes;
+    protected String statusDescription;
 
-    public ResponseBase(HttpStatus errorcod, String errordes) {
-        this.errorcod = errorcod;
-        this.errordes = errordes;
+    public ResponseBase(HttpStatus statusCod, String statusDescription) {
+        this.statusCod = statusCod;
+        this.statusDescription = statusDescription;
     }
 }

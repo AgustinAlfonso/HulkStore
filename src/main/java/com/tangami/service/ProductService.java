@@ -1,10 +1,8 @@
 package com.tangami.service;
 
+import com.tangami.dto.ProductListResponse;
 import com.tangami.dto.ProductRequest;
 import com.tangami.dto.ProductResponse;
-import com.tangami.dto.ProductListResponse;
-
-import java.util.List;
 
 public interface ProductService {
 

@@ -1,19 +1,14 @@
 package com.tangami.service;
 
-import com.tangami.Helper.Helper;
+import com.tangami.helper.Helper;
 import com.tangami.dto.ProductListResponse;
-import com.tangami.dto.ProductRequest;
 import com.tangami.dto.ProductResponse;
-import com.tangami.h2.ProductRepository;
+import com.tangami.repository.ProductRepository;
 import com.tangami.model.Product;
-import com.tangami.service.ProductService;
-import com.tangami.service.ProductServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Arrays;
