@@ -1,7 +1,9 @@
-package com.tangami.h2.entity;
+package com.tangami.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,7 +14,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "PRODUCT")
 @Data
-@Builder
 public class Product {
 
     @Id
@@ -28,6 +29,5 @@ public class Product {
 
     @Column(name = "Amount", nullable = false)
     private Integer amount;
-
 
 }
