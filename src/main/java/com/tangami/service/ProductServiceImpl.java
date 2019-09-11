@@ -1,19 +1,18 @@
 package com.tangami.service;
 
 
-import com.tangami.exception.InsufficientAmountException;
-import com.tangami.helper.Helper;
 import com.tangami.dto.ProductListResponse;
 import com.tangami.dto.ProductRequest;
 import com.tangami.dto.ProductResponse;
-import com.tangami.repository.ProductRepository;
+import com.tangami.exception.InsufficientAmountException;
+import com.tangami.helper.Helper;
 import com.tangami.model.Product;
+import com.tangami.repository.ProductRepository;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Objects;
-import java.util.Optional;
 import java.util.logging.Level;
 import java.util.stream.Collectors;
 

@@ -39,23 +39,23 @@ public class TangamiController {
         }
     }
 
-    @GetMapping("/getAllProducts")
+    @GetMapping("/allProducts")
     //Obtiene todos los productos, este metodo se penso para popular los dataLists del frontend
-    public ResponseEntity<ProductListResponse> getAllProducts() {
+    public ResponseEntity<ProductListResponse> allProducts() {
         ProductListResponse response = productService.getAllProducts();
         return new ResponseEntity<ProductListResponse>(response, HttpStatus.OK);
     }
 
-    @GetMapping("/getSellableProducts")
+    @GetMapping("/sellableProducts")
     //Obtiene todos los productos que se pueden vender, es decir, los que tienen stock
-    public ResponseEntity<ProductListResponse> getSellableProducts() {
+    public ResponseEntity<ProductListResponse> sellableProducts() {
         ProductListResponse response = productService.getSellableProducts();
         return new ResponseEntity<ProductListResponse>(response, HttpStatus.OK);
     }
 
-    @PostMapping("/setProductAmount")
+    @PostMapping("/productAmount")
     //Este metodo se penso para agregar una cantdad determinada de productos, pensando en una compra grande a un mayorista por ejemplo
-    public ResponseEntity<ProductResponse> setProductAmount(@RequestBody ProductRequest product) {
+    public ResponseEntity<ProductResponse> productAmount(@RequestBody ProductRequest product) {
         ProductResponse response = productService.setProductAmount(product);
         return new ResponseEntity<ProductResponse>(response, response.getStatusCod());
     }
