@@ -88,7 +88,7 @@ public class TangamiControllerTest {
 //before
         when(productService.setProductAmount(PRODUCT_REQUEST)).thenReturn(PRODUCT_RESPONSE);
 //method call
-        ResponseEntity<ProductResponse> responseEntity = tangamiController.setProductAmount(PRODUCT_REQUEST);
+        ResponseEntity<ProductResponse> responseEntity = tangamiController.productAmount(PRODUCT_REQUEST);
         ProductResponse productResponse = responseEntity.getBody();
 //after
         assertEquals(PRODUCT_RESPONSE.getProductName(),productResponse.getProductName());
@@ -104,7 +104,7 @@ public class TangamiControllerTest {
 //before
         when(productService.getAllProducts()).thenReturn(PRODUCT_LIST_RESPONSE);
 //method call
-        ResponseEntity<ProductListResponse> responseEntity = tangamiController.getAllProducts();
+        ResponseEntity<ProductListResponse> responseEntity = tangamiController.allProducts();
         ProductListResponse productResponse = responseEntity.getBody();
 //after
 
@@ -119,7 +119,7 @@ public class TangamiControllerTest {
 //before
         when(productService.getSellableProducts()).thenReturn(PRODUCT_LIST_RESPONSE);
 //method call
-        ResponseEntity<ProductListResponse> responseEntity = tangamiController.getSellableProducts();
+        ResponseEntity<ProductListResponse> responseEntity = tangamiController.sellableProducts();
         ProductListResponse productResponse = responseEntity.getBody();
 //after
 
