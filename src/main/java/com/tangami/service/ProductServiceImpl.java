@@ -33,7 +33,7 @@ public class ProductServiceImpl implements ProductService {
         return ProductListResponse.builder().productList(productRepository.findAll()
                 .stream()
                 .filter(Objects::nonNull)
-                .collect(Collectors.mapping((p) -> helper.modelResponseMapper(p), Collectors.toList())))
+                .collect(Collectors.mapping(p -> helper.modelResponseMapper(p), Collectors.toList())))
                 .build();
     }
 
@@ -43,7 +43,7 @@ public class ProductServiceImpl implements ProductService {
         return ProductListResponse.builder().productList(productRepository.findProductByAmountGreaterThan(0)
                 .stream()
                 .filter(Objects::nonNull)
-                .collect(Collectors.mapping((p) -> helper.modelResponseMapper(p), Collectors.toList())))
+                .collect(Collectors.mapping(p -> helper.modelResponseMapper(p), Collectors.toList())))
                 .build();
     }
 
@@ -52,7 +52,7 @@ public class ProductServiceImpl implements ProductService {
         return helper.saveModifications(product);
     }
 
-    public ProductResponse sellProduct(ProductRequest product) throws InsufficientAmountException {
+    public ProductResponse sellProduct(ProductRequest product){
         Product productOptional = productRepository.findProductByProductTypeAndProductName(product.getProductType(),product.getProductName());
         if (productOptional != null && productOptional.getAmount() > product.getAmount()){
             throw new InsufficientAmountException("La cantidad ingresada es mayor a la disponible");
