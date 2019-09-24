@@ -12,10 +12,10 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 
 
     @ExceptionHandler(Exception.class)
-    public final ResponseEntity<ExceptionResponse> InsuficientAmountException(InsufficientAmountException ex, WebRequest request) {
+    public final ResponseEntity<ExceptionResponse> insuficientAmountException(InsufficientAmountException ex, WebRequest request) {
         ExceptionResponse exceptionResponse = new ExceptionResponse(new Date(), ex.getMessage(),
                 request.getDescription(false));
-        return new ResponseEntity<ExceptionResponse>(exceptionResponse, HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(exceptionResponse, HttpStatus.NOT_FOUND);
     }
 
 }

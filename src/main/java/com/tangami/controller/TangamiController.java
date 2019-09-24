@@ -5,14 +5,18 @@ import com.tangami.dto.ProductRequest;
 import com.tangami.dto.ProductResponse;
 import com.tangami.exception.InsufficientAmountException;
 import com.tangami.service.ProductServiceImpl;
+import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.logging.Level;
+
 
 @RestController
 @RequestMapping(value = "/nami/tango")
+@Log
 public class TangamiController {
 
     @Autowired
@@ -22,8 +26,7 @@ public class TangamiController {
     //Recibe un producto y lo agrega a la base, el control de los productos repetidos estara en la ui
     public ResponseEntity<ProductResponse> addProduct(@RequestBody ProductRequest product) {
         ProductResponse response = productService.addProduct(product);
-        ResponseEntity<ProductResponse> productResponseResponseEntity = new ResponseEntity<>(response, response.getStatusCod());
-        return productResponseResponseEntity;
+        return new ResponseEntity<>(response, response.getStatusCod());
     }
 
     @PostMapping("/sellProduct")
@@ -33,8 +36,9 @@ public class TangamiController {
     public ResponseEntity<ProductResponse> sellProduct(@RequestBody ProductRequest product) {
         try{
             ProductResponse response = productService.sellProduct(product);
-            return new ResponseEntity<ProductResponse>(response, response.getStatusCod());
+            return new ResponseEntity<>(response, response.getStatusCod());
         }catch (InsufficientAmountException e){
+            log.log(Level.SEVERE, e.getMessage());
             throw e;
         }
     }
@@ -43,21 +47,21 @@ public class TangamiController {
     //Obtiene todos los productos, este metodo se penso para popular los dataLists del frontend
     public ResponseEntity<ProductListResponse> allProducts() {
         ProductListResponse response = productService.getAllProducts();
-        return new ResponseEntity<ProductListResponse>(response, HttpStatus.OK);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @GetMapping("/sellableProducts")
     //Obtiene todos los productos que se pueden vender, es decir, los que tienen stock
     public ResponseEntity<ProductListResponse> sellableProducts() {
         ProductListResponse response = productService.getSellableProducts();
-        return new ResponseEntity<ProductListResponse>(response, HttpStatus.OK);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @PostMapping("/productAmount")
     //Este metodo se penso para agregar una cantdad determinada de productos, pensando en una compra grande a un mayorista por ejemplo
     public ResponseEntity<ProductResponse> productAmount(@RequestBody ProductRequest product) {
         ProductResponse response = productService.setProductAmount(product);
-        return new ResponseEntity<ProductResponse>(response, response.getStatusCod());
+        return new ResponseEntity<>(response, response.getStatusCod());
     }
 
 }

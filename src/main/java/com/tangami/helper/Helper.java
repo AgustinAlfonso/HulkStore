@@ -32,7 +32,7 @@ public class Helper {
                 productRepository.save(responseMapper(product));
             response.setStatusCod(HttpStatus.OK);
             response.setStatusDescription("Producto Modificado con Exito");
-        }catch (Throwable e){
+        }catch (Exception e){
             log.log(Level.SEVERE, e.getMessage(), e);
             response.setStatusCod(HttpStatus.NOT_MODIFIED);
             response.setStatusDescription("No se pudieron guardar los cambios");
